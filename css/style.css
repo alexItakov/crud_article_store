@@ -1,0 +1,406 @@
+ 
+@font-face {
+    font-family:"Roboto";
+    src: url("../font/roboto/Roboto-Medium.ttf");
+
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+html {
+
+}
+
+
+
+body {
+
+
+}
+
+footer {
+    position:relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+h1 {
+    font-family:"Roboto" !important;
+}
+
+h5 a {
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+
+h5 a:hover {
+    text-decoration: underline;
+    color: #0097DE;
+    transition: all 0.2s linear;
+    
+
+}
+
+
+
+
+
+
+.logo {
+    width: 213px;
+    height: 36px;
+    background: url('http://i.imgur.com/fd8Lcso.png') no-repeat;
+    margin: 30px auto;
+}
+
+.login-block {
+    width: 320px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #2FA1EC;
+    margin: 0 auto;
+    position: relative;
+}
+
+.login-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: "Roboto";
+}
+
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: Montserrat;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+
+.login-block input.iconname {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input.iconname:focus {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input.lock {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input.lock:focus {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #2FA1EC;
+}
+
+.login-block button {
+    width: 100%;
+    height: 40px;
+    background: #2FA1EC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #2FA1EC;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.login-block button:hover {
+    background: #2FA1EC;
+}
+
+
+
+
+.reg_button {
+    width: 100%;
+    height: 40px;
+    background: #2FA1EC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #2FA1EC;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+    padding-right: 42px !important;
+}
+
+.reg_button:hover {
+    background: #50AAE6;
+}
+
+
+.warning {
+    color: #fff;
+}
+
+
+#avatar {
+    border: 2px solid #319AF1;
+    height: 119px;
+    width: 125px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+
+#image {
+    position: relative;
+    z-index: 2;
+    height: 146px;
+    width: 142px;
+}
+.txt_avatar {
+    margin: auto auto;
+    position: absolute;
+    font-size: 14px;
+    color: #949494;
+    font-family: "Roboto";
+    top: 20%;
+    left: 15%;
+    text-align: center;
+}
+
+.av_button {
+    width: 32px !important;
+    padding-left: 0px !important;
+    text-align: left !important;
+    font-size: 10px !important;
+    margin-left: 43px;
+    height: 30px !important;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute !important;
+    top: 74%;
+    z-index: 3;
+}
+
+
+#avatar img {
+    position: relative;
+    top: -11%;
+    left: -9%;
+}
+
+#upload {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 79%;
+    left: 38%;
+
+
+}
+
+#upload img {
+    height: 100%;
+}
+
+
+
+/*Стили для ОШИБОК в форме*/
+
+
+#imgInput-error {
+
+    position: absolute;
+    top: 28.5%;
+    width: 87%;
+    margin-left: 8%;
+    color: #EF5D80;
+
+}
+
+#fname-error {
+ position: absolute;
+ top: 34.5%;
+ width: 87%;
+ margin-left: 5%;
+ color: #EF5D80;
+
+
+}
+
+#lname-error {
+ position: absolute;
+ top: 44%;
+ width: 87%;
+ margin-left: 5%;
+ color: #EF5D80;
+
+
+}
+
+
+#login-error {
+ position: absolute;
+ top: 53%;
+ width: 87%;
+ margin-left: 5%;
+ color: #EF5D80;
+
+
+}
+
+
+#email-error {
+   position: absolute;
+   top: 62.5%;
+   width: 87%;
+   margin-left: 5%;
+   color: #EF5D80;
+
+
+}
+
+
+#psword-error {
+   position: absolute;
+   top: 71.5%;
+   width: 87%;
+   margin-left: 5%;
+   color: #EF5D80;
+
+
+}
+
+#repsword-error {
+   position: absolute;
+   top: 80.5%;
+   width: 87%;
+   margin-left: 5%;
+   color: #EF5D80;
+
+
+}
+
+
+#login_taken {
+    width: 500px;
+    height: 20px;
+    position: absolute;
+    color: #EF5D80;
+    font-style: italic;
+    font-family: 'lucida grande', helvetica, verdana, arial, sans-serif;
+    font-size: small;
+    top: 53%;
+    left: 64%
+}
+
+
+#email_taken {
+    width: 500px;
+    height: 20px;
+    position: absolute;
+    color: #EF5D80;
+    font-style: italic;
+    font-family: 'lucida grande', helvetica, verdana, arial, sans-serif;
+    font-size: small;
+    top: 60%;
+    left: 64%
+}
+
+#email_taken a {
+   color: #2FA1EC;
+   text-decoration: none;
+   font-size: 14px;
+   /*font-style: normal;*/
+   font-weight: bold;
+   margin-left: 5px;
+
+
+}
+
+#login_taken a:hover {
+    color: #1B6781;
+    text-decoration: underline;
+}
+
+#ps_noy {
+    width: 500px;
+    height: 20px;
+    position: absolute;
+    color: #EF5D80;
+    font-style: italic;
+    font-family: 'lucida grande', helvetica, verdana, arial, sans-serif;
+    font-size: small;
+    top: 70%;
+    left: 64%
+
+}
+
+
+
+
+
+
+/*Стили для ОШИБОК в форме*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*СТИЛИ формы конец*/
+
+
+
+/* Custom Stylesheet */
+/**
+* Use this file to override Materialize files so you can update
+* the core Materialize files in the future
+*
+* Made By MaterializeCSS.com
+*/
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.enter_text {
+    position: relative;
+    top: 15%;
+    margin-top: 12%;
+    margin-bottom: 15%;
+}

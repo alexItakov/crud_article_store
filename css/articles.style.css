@@ -1,0 +1,369 @@
+ 
+
+
+
+html {
+
+} 
+
+
+body {
+
+
+}
+
+footer {
+	position:relative;
+	bottom: 0px;
+	width: 100%;
+}
+
+
+
+
+
+
+
+.logo {
+	width: 213px;
+	height: 36px;
+	background: url('http://i.imgur.com/fd8Lcso.png') no-repeat;
+	margin: 30px auto;
+}
+
+.login-block {
+	width: 320px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	border-top: 5px solid #2FA1EC;
+	margin: 0 auto;
+}
+
+.login-block h1 {
+	text-align: center;
+	color: #000;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.login-block input {
+	width: 100%;
+	height: 42px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-family: Montserrat;
+	padding: 0 20px 0 50px;
+	outline: none;
+}
+
+.login-block input#username {
+	background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+	background-size: 16px 80px;
+}
+
+.login-block input#username:focus {
+	background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+	background-size: 16px 80px;
+}
+
+.login-block input#password {
+	background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+	background-size: 16px 80px;
+}
+
+.login-block input#password:focus {
+	background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+	background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+	border: 1px solid #2FA1EC;
+}
+
+.login-block button {
+	width: 100%;
+	height: 40px;
+	background: #2FA1EC;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #2FA1EC;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-family: Montserrat;
+	outline: none;
+	cursor: pointer;
+}
+
+.login-block button:hover {
+	background: #2FA1EC;
+}
+
+
+
+
+.reg_button {
+	width: 100%;
+	height: 40px;
+	background: #2FA1EC;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #2FA1EC;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-family: Montserrat;
+	outline: none;
+	cursor: pointer;
+	padding-right: 42px !important;
+}
+
+.reg_button:hover {
+	background: #50AAE6;
+}
+
+
+.warning {
+	color: #fff;
+}
+
+
+
+
+.av_button  {
+	
+}
+
+#avatar {
+	border: 2px dashed #2FA1EC;
+	height: 40px;
+	width: 40px;
+}
+
+
+
+
+
+/*СТИЛИ формы конец*/
+
+
+
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ .icon-block {
+ 	padding: 0 15px;
+ }
+ .icon-block .material-icons {
+ 	font-size: inherit;
+ }
+
+ .enter_text {
+ 	position: relative;
+ 	top: 15%;
+ 	margin-top: 12%;
+ 	margin-bottom: 15%;
+ }
+
+
+
+
+/*//////////
+*/
+
+
+/*Стили для формы */
+
+
+.login-block {
+	width: 320px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	border-top: 5px solid #2FA1EC;
+	margin: 0 auto;
+}	
+
+.login-block input {
+	width: 100%;
+	height: 42px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-family: Montserrat;
+	padding: 0 20px 0 50px;
+	outline: none;
+}
+
+/*Стили для формы */
+
+
+
+
+
+#tools {
+	width: 68%;
+	margin: 0 auto;
+
+}
+
+
+#category {
+	width: 68%;
+	margin: 0 auto;
+	display: inline-block;
+}
+#new_article {
+	display: inline-block;
+	width: 20%;
+	position: relative;
+	left: 10%;
+
+}
+
+
+
+
+.article_block {
+	width: 32%;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	
+}
+
+#article_date {
+	font-size: 10px;
+	text-align: left;
+	padding-left: 15px;
+	opacity: .5;
+	margin-top: 4px;
+}
+
+#article_autor {
+	text-align: left;
+	padding-left: 15px;
+	margin-bottom: 0px;
+
+}
+
+#article_cat {
+	text-align: left;
+	padding-left: 15px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	line-height: 12px;
+}
+
+#article_cat span {
+	text-align: right;
+}
+
+#article_text {
+	text-align: left;
+	max-height: 290px;
+	overflow: hidden;
+	
+}
+}
+
+
+
+
+
+/*/////    Добавлениии Статьи Стили*/
+
+
+h4 {
+	font-size: 24px;
+	margin-bottom: 0px;
+}
+
+
+#add_article_text {
+
+	height: 16rem;
+
+}
+
+
+.reg2 {
+	width: 40% !important; 
+	margin: 0 auto; 
+	position:relative;
+	left: 28% !important;
+	padding-left: 40px !important;
+	margin-top: 40px !important;
+	margin-bottom: 40px !important;
+}
+
+
+
+
+
+
+
+
+
+
+/*/////    Добавлениии Статьи Стили*/
+
+
+.article_block {
+	position: relative;
+	z-index: 2;
+}
+
+#del_article {
+	height: 24px;
+	width: 24px;
+	position: absolute;
+	top: 4%;
+	left: 82%;
+	opacity: .1;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+
+
+
+#edit_article {
+	height: 24px;
+	width: 24px;
+	position: absolute;
+	top: 4.5%;
+	left: 74%;
+	opacity: .1;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+
+
+#del_article:hover {
+	opacity: 0.6;
+	transition: all 0.5s linear;
+
+}
+
+
+#edit_article:hover {
+	opacity: 0.6;
+	transition: all 0.5s linear;
+
+}
+
