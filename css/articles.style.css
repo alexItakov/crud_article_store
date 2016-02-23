@@ -367,3 +367,14 @@ h4 {
 
 }
 
+.like_btn {
+	position: absolute;
+	top: 92%;
+	left: 63%;
+	height: 30px;
+	width: 60px;
+	background: url(../img/pen-pencil-write-letter-512.png);
+	background-repeat: no-repeat;
+	background-size: 30%;
+}
+

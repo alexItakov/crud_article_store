@@ -44,6 +44,70 @@ margin-bottom: 15%;" class="container">
 
 <?php 
 
+///ТИПО PHP.INI
+///ТИПО PHP.INI
+///ТИПО PHP.INI
+
+// Инициируем сессию
+session_start();
+$_SESSION['user_id'] = (int)31;     // ВХОДНОЙ СЕССИОННЫЙ ID
+//echo $_SESSION['user_id']."- айдишка входящего  ";    //  $id = $_SESSION['id'];  по умолчанию вводим 1, но так по идеи брать из сессии
+
+
+$dbh = new PDO('mysql:host=localhost;dbname=project1','root', 'root');
+$dbh->exec('SET NAMES utf8');
+
+
+
+$slctArticles = " SELECT 
+`article_id`, 
+`title`,
+COUNT(rate.id) AS likes, 
+GROUP_CONCAT(users.login SEPARATOR '|') AS liked_by
+
+FROM `project1`.`articles`
+
+LEFT JOIN rate
+ON articles.article_id = rate.article 
+
+LEFT JOIN users 
+ON rate.user = users.id
+
+
+GROUP BY articles.article_id
+
+";
+$articlesQuery = $dbh->query($slctArticles);
+while ($row = $articlesQuery->fetch(PDO::FETCH_OBJ))  {
+
+	$articles[] = $row;
+
+}
+
+//echo '<pre>', print_r($articles, true), '</pre>';
+// foreach ($articles as $article):
+$per = 12;
+echo $articles[$per]->likes;
+// endforeach;
+
+
+
+$dbh = NULL;  //Закрыл соединение
+
+///ТИПО PHP.INI
+///ТИПО PHP.INI
+
+
+?>
+
+
+
+
+
+
+
+<?php 
+
 //  СКРИПТ ОПРЕДЕЛЕНИЯ КАТЕГОРИИИ СТАТЬЯ ДЛЯ ВЫВЕДЕНИЯ  
 
 
@@ -63,11 +127,11 @@ else  if ($Module == 'articlescategory') {
 	$Param1 = "SELECT `article_id`, `title`, `autor`,`text`,  `category`, `date`  
 	FROM `project1`.`articles` 
 	WHERE `category` = '$Param[id]'  
-	 --   ЧЕ ТО Я НЕ ВРУБИЛСЯ КАК ЭТА ФИШКА ВЫЧИСЛЯЕТ ID
-	 ORDER BY `article_id` DESC;"; 
-	 
+  	--   ЧЕ ТО Я НЕ ВРУБИЛСЯ КАК ЭТА ФИШКА ВЫЧИСЛЯЕТ ID
+  	ORDER BY `article_id` DESC;"; 
 
-	}
+
+  }
 
 
 //  СКРИПТ ОПРЕДЕЛЕНИЯ КАТЕГОРИИИ СТАТЕЙ ДЛЯ ВЫВЕДЕНИЯ  
@@ -79,13 +143,13 @@ else  if ($Module == 'articlescategory') {
 
 
 	// CONNECT
-	$dbh = new PDO('mysql:host=localhost;dbname=project1','root', 'root');
-	$dbh->exec('SET NAMES utf8');
+  $dbh = new PDO('mysql:host=localhost;dbname=project1','root', 'root');
+  $dbh->exec('SET NAMES utf8');
 
 
-	$slct = $Param1;
-	$assoc_res = $dbh->query($slct);
-	$dbh = NULL;  //Закрыл соединение
+  $slct = $Param1;
+  $assoc_res = $dbh->query($slct);
+  $dbh = NULL;  //Закрыл соединение
 
 
 
@@ -94,48 +158,61 @@ else  if ($Module == 'articlescategory') {
 // print_r($Param1);
 // print_r($query);	
 
-	while ( $row = $assoc_res->fetch(PDO::FETCH_ASSOC)) {
+  while ( $row = $assoc_res->fetch(PDO::FETCH_ASSOC)) {
 
-		?>
-		
-		<div class="col s12 m4 article_block">
-			<div class="icon-block">
-				<h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-				<h5 class="center"><a target="blank" href="http://localhost/index.php/viewArticle?id=<?php echo $row['article_id']; ?>">  <?php echo $row['title']; ?>  </a> </h5>
+  	?>
 
-				<div id="article_text" class="light"> <?php echo $row['text']; ?></div>
-			</div>
-			<p id="article_autor" >Autor: <b><?php echo $row['autor']; ?> </b></p>
-			<p id="article_cat" >Category: <b><?php echo $row['category']; ?> </b></p>
-			<div id="article_date"><?php echo $row['date']; ?></div>
+  	<div class="col s12 m4 article_block">
+  		<div class="icon-block">
+  			<h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+  			<h5 class="center"><a target="blank" href="http://localhost/index.php/viewArticle?id=<?php echo $row['article_id']; ?>">  <?php echo $row['title']; ?>  </a> </h5>
 
-			<div id="del_article"> <a href="http://localhost/index.php/deleteArticle?id=<?php echo $row['article_id']; ?>"><img src="../img/ic_close_black_24dp_2x.png" height="24" width="24" alt=""></a>  </div>
+  			<div id="article_text" class="light"> <?php echo $row['text']; ?></div>
+  		</div>
+  		<p id="article_autor" >Autor: <b><?php echo $row['autor']; ?> </b></p>
+  		<p id="article_cat" >Category: <b><?php echo $row['category']; ?> </b></p>
+  		<div id="article_date"><?php echo $row['date']; ?></div>
 
-			<div id="edit_article"> <a href="http://localhost/index.php/editArticle?id=<?php echo $row['article_id']; ?>"><img src="../img/pen-pencil-write-letter-512.png" height="18" width="18" alt=""></a>  </div>
+  		<div id="del_article"> <a href="http://localhost/index.php/deleteArticle?id=<?php echo $row['article_id']; ?>"><img src="../img/ic_close_black_24dp_2x.png" height="24" width="24" alt=""></a>  </div>
 
 
-			
-		</div>
+  		<?php 
+
+  		
 
 
+  		?>
 
+  		<div id="edit_article"> <a href="http://localhost/index.php/editArticle?id=<?php echo $row['article_id']; ?>"><img src="../img/pen-pencil-write-letter-512.png" height="18" width="18" alt=""></a>  </div>
+  		<a class="like_btn" href="http://localhost/like.php?type=article&id=<?php echo $row['article_id'];?>">
 
-		<?php }  ?>
+  			<?php
 
+  			$a = $row['article_id'] - 1;
 
-
-	</div>
-
-
-
-	<!-- КОНЕЦ ВЫВОДА СТАТЕЙ -->
-	<!-- КОНЕЦ ВЫВОДА СТАТЕЙ -->
-	<!-- КОНЕЦ ВЫВОДА СТАТЕЙ -->
+  			echo $articles[$a]->likes; ?></a>
+  			
 
 
 
 
 
+  		</div>
+
+
+
+
+  		<?php }  ?>
+
+
+
+  	</div>
+
+
+
+  	<!-- КОНЕЦ ВЫВОДА СТАТЕЙ -->
+  	<!-- КОНЕЦ ВЫВОДА СТАТЕЙ -->
+  	<!-- КОНЕЦ ВЫВОДА СТАТЕЙ -->
 
 
 
@@ -144,34 +221,39 @@ else  if ($Module == 'articlescategory') {
 
 
 
-	<footer class="page-footer orange">
-		<div class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<h5 class="white-text">Company Bio</h5>
-					<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 
-				</div>
-				<div class="col l3 s12">
-					<h5 class="white-text">Articles</h5>
-					<ul>
-						<li><a class="white-text" href="#!">Article 1</a></li>
-						<li><a class="white-text" href="#!">Article 2</a></li>
-						<li><a class="white-text" href="#!">Article 3</a></li>
-						<li><a class="white-text" href="#!">Article 4</a></li>
-					</ul>
-				</div>
 
-				<div class="col l3 s12">
-					<h5 class="white-text">Articles</h5>
-					<ul>
-						<li><a class="white-text" href="#!">Article 5</a></li>
-						<li><a class="white-text" href="#!">Article 6</a></li>
-						<li><a class="white-text" href="#!">Article 7</a></li>
-						<li><a class="white-text" href="#!">Article 8</a></li>
-					</ul>
-				</div>
+
+
+  	<footer class="page-footer orange">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col l6 s12">
+  					<h5 class="white-text">Company Bio</h5>
+  					<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+  				</div>
+  				<div class="col l3 s12">
+  					<h5 class="white-text">Articles</h5>
+  					<ul>
+  						<li><a class="white-text" href="#!">Article 1</a></li>
+  						<li><a class="white-text" href="#!">Article 2</a></li>
+  						<li><a class="white-text" href="#!">Article 3</a></li>
+  						<li><a class="white-text" href="#!">Article 4</a></li>
+  					</ul>
+  				</div>
+
+  				<div class="col l3 s12">
+  					<h5 class="white-text">Articles</h5>
+  					<ul>
+  						<li><a class="white-text" href="#!">Article 5</a></li>
+  						<li><a class="white-text" href="#!">Article 6</a></li>
+  						<li><a class="white-text" href="#!">Article 7</a></li>
+  						<li><a class="white-text" href="#!">Article 8</a></li>
+  					</ul>
+  				</div>
 			<!-- <div class="col l3 s12">
 			<h5 class="white-text">Connect</h5>
 			<ul>
@@ -189,5 +271,9 @@ else  if ($Module == 'articlescategory') {
 	</div>
 </div>
 </footer>
+
+
+
+
 
 
